@@ -1,5 +1,17 @@
 ![Project Brandshop logo](images/Logo.png)
-# Парсер сайта BRANDSHOP
+# BRANDSHOP
+
+![Python](https://img.shields.io/badge/Python_3.10-blue?logo=python&logoColor=yellow)
+![SQLite](https://img.shields.io/badge/SQLite-purple?logo=SQLite&logoColor=blue)
+![Docker](https://img.shields.io/badge/Docker-grey?logo=Docker&logoColor=blue)
+![DockerCompose](https://img.shields.io/badge/DockerCompose-blue)
+![Static Badge](https://img.shields.io/badge/FastAPI-black?logo=FastAPI)
+
+
+
+
+
+
 
 Данный парсер предназначен для сбора информации о товарах, отсортированных по убыванию скидки, на сайте одежды Brandshop. Это позволит пользователю быстро посмотреть какие вещи с наибольшкй выгодой он может купить на данном сайте.
 
