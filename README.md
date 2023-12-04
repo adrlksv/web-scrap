@@ -24,6 +24,20 @@
 - Ссылка на фото товара
 - Ссылка на товар
 
+###### Структура проекта
+    │
+    ├── backend/ (часть с FastAPI)
+    │   ├── __init__.py
+    │   └── service.py
+    │
+    ├── .dockerignore
+    ├── Dockerfile
+    ├── docker-compose.yml
+    ├── main.py
+    ├── parser.py
+    ├── requirements.txt
+    ├── build.sh
+    └── products.db
 
 ##### Ссылка, с которой работает парсер:
     https://brandshop.ru/muzhskoe/?sort=saleDESC
