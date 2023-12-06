@@ -1,33 +1,17 @@
 from bs4 import BeautifulSoup
 import requests
-import sqlite3 as sq
+from database.database_creat import Database, create_db
 
 
 headers = {
     'sec-ch-ua': '"Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
-    'Referer': 'https://brandshop.ru/',
     'sec-ch-ua-mobile': '?0',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
     'sec-ch-ua-platform': '"Windows"',
 }
 
 
-def create_db():
-    with sq.connect('products.db') as con:
-        cur = con.cursor()
-
-        cur.execute('''CREATE TABLE IF NOT EXISTS products (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        brand TEXT,
-        img_url BLOB,
-        product_type TEXT,
-        price TEXT,
-        description TEXT,
-        product_link TEXT
-        )''')
-
-
-def get_url_product():
+def generate_url_product() -> str:
     for count in range(1, 6):
         main_url = f'https://brandshop.ru/muzhskoe/?sort=saleDESC&page={count}'
 
@@ -43,38 +27,34 @@ def get_url_product():
 
 
 def get_info_product():
-    for url_of_product in get_url_product():
-        con = sq.connect('products.db')
+    for url_of_product in generate_url_product():
+        with Database().get_connection() as con:
+            cur = con.cursor()
+            new_response = requests.get(url_of_product, headers=headers)
 
-        cur = con.cursor()
+            new_soup = BeautifulSoup(new_response.text, 'lxml')
 
-        new_response = requests.get(url_of_product, headers=headers)
+            brand = new_soup.find('h1').find('a').text
+            img_url = new_soup.find('div', class_='product-page__img _ibg').find('img').get('src')
+            product_type = new_soup.find('h1').find('span').text.strip()
+            product_link = url_of_product
+            price = new_soup.find('div', class_='product-order__price').find('meta').get('content') + 'р.'
+            description_data = new_soup.find('div', class_='product-menu__content')
+            description_all = description_data.find_all('li')
 
-        new_soup = BeautifulSoup(new_response.text, 'lxml')
+            description_list = []
+            for description_html in description_all:
+                description_el = description_html.text.strip()
+                description_list.append(description_el)
 
-        brand = new_soup.find('h1').find('a').text
-        img_url = new_soup.find('div', class_='product-page__img _ibg').find('img').get('src')
-        product_type = new_soup.find('h1').find('span').text.strip()
-        product_link = url_of_product
-        price = new_soup.find('div', class_='product-order__price').find('meta').get('content') + 'р.'
-        description_data = new_soup.find('div', class_='product-menu__content')
-        description_all = description_data.find_all('li')
+            description = '; '.join(description_list)
 
-        description_list = []
-        for description_html in description_all:
-            description_el = description_html.text.strip()
-            description_list.append(description_el)
+            cur.execute('''
+                INSERT INTO products (brand, img_url, product_type, price, description, product_link)
+                VALUES (?, ?, ?, ?, ?, ?)
+            ''', (brand, img_url, product_type, price, description, product_link))
 
-        description = '; '.join(description_list)
-
-        cur.execute('''
-            INSERT INTO products (brand, img_url, product_type, price, description, product_link)
-            VALUES (?, ?, ?, ?, ?, ?)
-        ''', (brand, img_url, product_type, price, description, product_link))
-
-        con.commit()
-
-        con.close()
+            con.commit()
 
 
 def main():

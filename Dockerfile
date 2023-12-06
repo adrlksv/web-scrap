@@ -17,4 +17,4 @@ EXPOSE 8080
 ENV NAME SCRAPPER
 
 # Run main.py when the container launches
-CMD ["python", "main.py"]
+CMD ["uvicorn", "main:app", "--host", "127.0.0.1", "--port", "8080", "--reload"]
