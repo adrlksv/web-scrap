@@ -25,19 +25,29 @@
 - Ссылка на товар
 
 ###### Структура проекта
-    │
-    ├── backend/ (часть с FastAPI)
-    │   ├── __init__.py
-    │   └── service.py
-    │
-    ├── .dockerignore
-    ├── Dockerfile
-    ├── docker-compose.yml
-    ├── main.py
-    ├── parser.py
-    ├── requirements.txt
-    ├── build.sh
-    └── products.db
+│
+├── backend (часть с FastAPI)
+│   ├── b_app.py
+│   └── service.py
+│
+├── database
+│   └── database_create.py
+│   
+├── main.py
+└── parser.py
+
+
+
+##### Установка и настройка
+Клонируем репозиторий
+    git clone https://github.com/adrlksv/web-scrap.git
+
+Переходим в директорию проекта
+    cd web-scrap
+
+Сборка и запуск контейнеров Docker
+    docker-compose up --build
+
 
 ##### Ссылка, с которой работает парсер:
     https://brandshop.ru/muzhskoe/?sort=saleDESC
