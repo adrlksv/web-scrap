@@ -25,16 +25,15 @@
 - Ссылка на товар
 
 ###### Структура проекта
-│
-├── backend (часть с FastAPI)
-│   ├── b_app.py
-│   └── service.py
-│
-├── database
-│   └── database_create.py
-│   
-├── main.py
-└── parser.py
+    │
+    ├── backend (часть с FastAPI)
+    │   └── b_app.py
+    │
+    ├── database
+    │   └── database_create.py
+    │
+    ├── main.py
+    └── parser.py
 
 
 
