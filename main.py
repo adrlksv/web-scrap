@@ -1,5 +1,4 @@
-from fastapi import FastAPI
-from backend.service import app
+from backend.b_app import app
 
 if __name__ == "__main__":
     import uvicorn

@@ -24,6 +24,7 @@
 - Ссылка на фото товара
 - Ссылка на товар
 
+
 ###### Структура проекта
     │
     ├── backend (часть с FastAPI)
@@ -34,6 +35,19 @@
     │
     ├── main.py
     └── parser.py
+
+
+
+##### Установка и настройка
+- Клонируем репозиторий:
+    - git clone https://github.com/adrlksv/web-scrap.git
+
+- Переходим в директорию проекта 
+    - cd web-scrap
+
+- Сборка и запуск контейнеров Docker
+    - docker-compose up --build
+
 
 ##### Ссылка, с которой работает парсер:
     https://brandshop.ru/muzhskoe/?sort=saleDESC
