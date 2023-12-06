@@ -26,18 +26,14 @@
 
 ###### Структура проекта
     │
-    ├── backend/ (часть с FastAPI)
-    │   ├── __init__.py
-    │   └── service.py
+    ├── backend (часть с FastAPI)
+    │   └── b_app.py
     │
-    ├── .dockerignore
-    ├── Dockerfile
-    ├── docker-compose.yml
+    ├── database
+    │   └── database_create.py
+    │
     ├── main.py
-    ├── parser.py
-    ├── requirements.txt
-    ├── build.sh
-    └── products.db
+    └── parser.py
 
 ##### Ссылка, с которой работает парсер:
     https://brandshop.ru/muzhskoe/?sort=saleDESC
