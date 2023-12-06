@@ -1,0 +1,26 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N803" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="Banners._phone" />
+          <option value="Banners.sms_send" />
+          <option value="main.sms_send" />
+          <option value="main._phone" />
+          <option value="fake_useragent" />
+          <option value="fake_user_agent.UserAgent" />
+          <option value="main.PIL" />
+          <option value="str.reversed" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
