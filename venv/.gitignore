@@ -1,1 +1,6 @@
-# created by virtualenv automatically
+.idea/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+products.db
