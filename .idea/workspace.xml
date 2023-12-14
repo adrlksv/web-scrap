@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df8385e5-b202-4e23-b080-845c9d938aef" name="Changes" comment="changes" />
+    <list default="true" id="df8385e5-b202-4e23-b080-845c9d938aef" name="Changes" comment="changes">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products.db" beforeDir="false" afterPath="$PROJECT_DIR$/products.db" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +47,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -127,6 +134,9 @@
       <workItem from="1701867476019" duration="1991000" />
       <workItem from="1701870497581" duration="3340000" />
       <workItem from="1701873900346" duration="381000" />
+      <workItem from="1702556254589" duration="802000" />
+      <workItem from="1702557090273" duration="2338000" />
+      <workItem from="1702559477125" duration="378000" />
     </task>
     <task id="LOCAL-00001" summary="brandshop_scrapper">
       <option name="closed" value="true" />
