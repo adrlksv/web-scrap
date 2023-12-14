@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
 from database.db import Database
-from database.database_creat import Database, create_db
 
 
 headers = {
