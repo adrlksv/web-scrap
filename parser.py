@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 from database.db import Database
+from database.database_creat import Database, create_db
 
 
 headers = {
@@ -14,8 +15,8 @@ headers = {
 d_base = Database()  # Создаём экземпляр класса Database ля работы с базой данных
 
 
-def generate_url_product():
-    for count in range(1, 6):  # Проходим по каждой странице с товарами
+def generate_url_product() -> str:
+    for count in range(1, 6):
         main_url = f'https://brandshop.ru/muzhskoe/?sort=saleDESC&page={count}'
 
         response = requests.get(main_url, headers=headers)  # Отправляем HTTP-запрос к странице
